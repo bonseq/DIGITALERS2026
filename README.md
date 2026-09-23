@@ -33,8 +33,3 @@ Para clonar y ejecutar este proyecto en tu máquina local, necesitarás tener in
 - [Eclipse IDE para desarrolladores Java](https://www.eclipse.org/downloads/)
 - Drivers actualizados para los navegadores que desees usar (ej. ChromeDriver, geckodriver) incluidos en tu PATH o configurados mediante Selenium Manager (Selenium 4.6+).
 
-## ⚙️ Configuración y Ejecución
-
-1. Clona este repositorio en tu máquina local:
-   ```bash
-   git clone https://github.com/bonseq/DIGITALERS2026.git
