@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 //import java.time.Duration;
@@ -60,7 +61,23 @@ public class Laboratorio1 {
 			driver.quit();
 		}
 	}
+	@Test
+	void lab1_E4() {
+	WebDriver driver = new ChromeDriver();
+	try {
+	driver.get("https://automationexercise.com/products");
+	
+	WebElement buscador = driver.findElement(By.id("search_product"));
+	buscador.sendKeys("Blue Top");
+	buscador.sendKeys(Keys.ENTER);
+	
+
+	} finally {
+	driver.quit();
+	}
+	}
 }
+
 
 
 
