@@ -42,7 +42,8 @@ public class parte2 {
             
             
             WebElement email = waitLargo.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[data-qa='signup-email']")));
-			
+			//normalmente con weElement asumimos que busca un elemento
+            
 			email.sendKeys("example@email.com");
 			
 			String textoProducto = enlaceProductos.getText();
@@ -90,8 +91,8 @@ public class parte2 {
 	}
 	
 	
-	//Espera Fija: esperá 15 segundos.
-	//Espera implicita: es una espera geenral de todas las búsquedas (esperá hasta 15 segundos que aparezca el elemento).
-	//Espera explcita: esperá a que pase algo, hasta un tiempo máximo.
+	//Espera Fija: esperá n segundos.
+	//Espera implicita: es una espera geenral de todas las búsquedas (esperá hasta n segundos que aparezca el elemento).
+	//Espera explcita: esperá a que pase algo, hasta un tiempo n máximo.
 	
 }
