@@ -6,12 +6,13 @@
       <class name="laboratorio3_ejercicio1">
         <methods>
           <include name="setUp"/>
+          <include name="screenshot"/>
           <include name="irURL"/>
           <include name="finSuite"/>
           <include name="macVentana"/>
           <include name="mensajeInicio"/>
-          <include name="finPrueba"/>
           <include name="mensajeFin"/>
+          <include name="finPrueba"/>
           <include name="cerrarNav"/>
           <include name="loginUser"/>
         </methods>
