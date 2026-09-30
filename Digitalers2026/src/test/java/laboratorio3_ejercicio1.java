@@ -5,6 +5,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class laboratorio3_ejercicio1 {
 	WebDriver juli;  //variables globales papu
@@ -53,12 +60,50 @@ public class laboratorio3_ejercicio1 {
 	}
 	@Test
 	public void loginUser3() {
-		System.out.println("esta es la prueba 3 papu");
+		System.out.println("esta es la prueba 3");
 	}
+	
+	@Test
+	public void escribirYLeerTexto() throws IOException { //ioe maneja escepciones
+		//1
+	    File carpeta = new File("Evidencias");  //Creamos un nuevo objeto, contruye un archivo que refiere al recurso llamado evidencia
+	    if (!carpeta.exists() && !carpeta.mkdirs()) {  //aca abajo crea la carpeta y se fija si esta creada y si puede escribir en ella
+	        throw new IOException("No se pudo crear Evidencias");//sino lo puede hacer lanza error
+	    }
+	    //2
+	    File archivo = new File(carpeta, "nota.txt"); // esta creando la ruta a donde deberia crear el documento
+	    try (FileWriter escritor = new FileWriter(archivo)) {
+	        escritor.write("Evidencia de la unidad 22");
+	    }
+	    //3
+	    try (FileReader lector = new FileReader(archivo)) {
+	        int caracter;
+	        while ((caracter = lector.read()) != -1) {
+	            System.out.print((char) caracter);
+	        }
+	    }
+	}
+	
+	@AfterMethod 
+	public void screenshot() throws IOException {
+	    if (juli == null) {
+	        return;
+	    }
+
+	    File screen = ((TakesScreenshot) juli).getScreenshotAs(OutputType.FILE);
+	    
+	    File imageFile = new File("Evidencias/Test.png");
+	    
+	    FileUtils.copyFile(screen, imageFile);
+
+	    System.out.println(imageFile.getAbsolutePath());
+
+	}
+	
 	
 	@AfterMethod
 	public void mensajeFin() {
-		System.out.println("depue del metodo :D");
+		System.out.println("despues del metodo :D");
 	}
 	
 	@AfterClass
