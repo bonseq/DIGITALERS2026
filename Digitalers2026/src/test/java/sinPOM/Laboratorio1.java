@@ -1,3 +1,4 @@
+package sinPOM; //package de origen
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
